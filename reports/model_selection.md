@@ -6,7 +6,7 @@ During dashboard inspection, the first NLI MiniLM classifier assigned Non-fictio
 
 The final spot-check included Spider's Web, Witness for the Prosecution & Selected Plays, Miss Marple, Partners in Crime, Murder in Mesopotamia, The Four Loves, The Problem of Pain, Empires of the Monsoon, The Gap Into Madness, Master of the Game, The Once and Future King, and Murder in LaMut. The model predicted Fiction for the story/play titles and Non-fiction for the three factual titles. The Four Loves was still uncertain (approximately 0.54), so the dashboard's uncertainty flag remains useful.
 
-This was a small, deliberately selected development check. It is **not a held-out benchmark**, does not establish accuracy across the catalog, and should not be quoted as a performance percentage on a resume. A representative human-labelled sample is still needed.
+This was a small, deliberately selected development check. It is **not a held-out benchmark** and does not establish accuracy across the catalog. A representative human-labelled sample is still needed.
 
 The DeBERTa checkpoint declares float16 weights. The Transformers pipeline defaults to automatic dtype selection, which was slow on this CPU. Explicit float32 inference resolved that execution issue. Grouping similarly sized inputs reduces padding while restoring output order through cache keys. Both choices are visible in the source code.
 

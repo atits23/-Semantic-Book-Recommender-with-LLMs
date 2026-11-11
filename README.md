@@ -2,7 +2,7 @@
 
 ### A local LLM semantic book recommender
 
-Find books from a description of what you want to read, filter fiction or non-fiction, and adjust the emotional tone. Built as an understandable student project with **LangChain, Chroma, Hugging Face Transformers, and Gradio**.
+Find books from a description of what you want to read, filter fiction or non-fiction, and adjust the emotional tone. Built with **LangChain, Chroma, Hugging Face Transformers, and Gradio**.
 
 Inspired by [Jodie Burchell's freeCodeCamp course](https://www.youtube.com/watch?v=Q7mS1VHm3Yw) and its [companion repository](https://github.com/t-redactyl/llm-semantic-book-recommender). This implementation keeps the five learning stages and replaces paid embeddings with local models. It is independently implemented, with attribution to the original tutorial.
 
@@ -16,7 +16,7 @@ Inspired by [Jodie Burchell's freeCodeCamp course](https://www.youtube.com/watch
 - Scores seven emotions in description chunks and averages them for each book.
 - Presents ranked recommendations in a Gradio dashboard with category, tone, result-count, and mood-weight controls.
 - Keeps preprocessing separate from serving; the dashboard loads only the embedding model.
-- Includes explanatory notebooks, tests, a TF-IDF comparison tool, and an interview handbook.
+- Includes explanatory notebooks, tests, a TF-IDF comparison tool, and documented evaluation results.
 
 This is **content-based semantic retrieval**, not a chatbot, collaborative filtering system, or generative RAG application. It does not train a model from scratch or infer the reader's emotions.
 
@@ -46,9 +46,9 @@ python -m venv .venv
 .\.venv\Scripts\python.exe app.py
 ```
 
-Open **http://127.0.0.1:7860**. Stop the app with Ctrl+C. On macOS/Linux, use `.venv/bin/python` instead. Select the `.venv` interpreter in VS Code to use the notebooks. In this prepared workspace the environment and generated artifacts may already exist; see `reports/validation.md` for what was actually verified.
+Open **http://127.0.0.1:7860**. Stop the app with Ctrl+C. On macOS/Linux, use `.venv/bin/python` instead. Select the `.venv` interpreter in VS Code to use the notebooks. See [validation results](reports/validation.md) for the tested configuration and catalog statistics.
 
-After setup, Windows users can also double-click `run_dashboard.bat`. `requirements-lock.txt` records the tested environment; for an exact recreation, install it with the CPU wheel index available: `python -m pip install -r requirements-lock.txt --extra-index-url https://download.pytorch.org/whl/cpu`. The lock includes development/document tools as well as app dependencies.
+After setup, Windows users can also double-click `run_dashboard.bat`. `requirements-lock.txt` records the tested environment; for an exact recreation, install it with the CPU wheel index available: `python -m pip install -r requirements-lock.txt --extra-index-url https://download.pytorch.org/whl/cpu`. The lock includes development tools as well as app dependencies.
 
 After the first small run, build the complete catalog:
 
@@ -89,7 +89,6 @@ scripts/
   build_pipeline.py                 Command-line orchestration
   evaluate.py                       Sanity checks and TF-IDF comparison
   create_notebooks.py               Rebuild explanatory notebook sources
-  create_handbook.py                Generate the Word guide from Markdown
 data/raw/                           Downloaded books.csv (not committed)
 data/processed/                     Cleaned, classified, enriched CSVs
 data/evaluation_queries.json        Human relevance-label template
@@ -97,7 +96,6 @@ artifacts/chroma/                   Local persisted vectors (not committed)
 artifacts/checkpoints/              Resumable prediction cache
 reports/                            EDA, evaluation, validation results
 tests/                              Unit and real Chroma integration tests
-docs/                               Project explanation and interview guide
 ```
 
 ## Pipeline and design
@@ -177,11 +175,9 @@ The evaluator compares semantic search with TF-IDF at k=5 using precision, recal
 | Sparse category results | Try All; a tiny subset may contain few books of one type |
 | Poor suggestions | Try a clearer English query, inspect the descriptions, and evaluate rather than assuming model correctness |
 
-## Learning and interview preparation
+## Notebooks
 
-Read the notebooks in order, then [the full handbook](docs/project_guide.md). It covers the code, equations, tradeoffs, 30 interview questions with answers, demo steps, and resume wording. The Word version is `docs/Project_Guide_and_Interview_Questions.docx`.
-
-Use the measured values in `reports/` when discussing performance. Say “used pretrained transformer models,” not “trained an LLM.” Describe the tutorial as the starting point and explain the local-model, filtering, ranking, persistence, and evaluation improvements you understand.
+The five numbered notebooks walk through data exploration, zero-shot classification, emotion analysis, vector search, and evaluation. They use the same modules as the command-line pipeline. See [validation results](reports/validation.md) for executed checks and measured results.
 
 ## References
 

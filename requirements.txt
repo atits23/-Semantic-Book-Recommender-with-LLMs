@@ -14,4 +14,3 @@ pytest>=8,<10
 nbformat>=5.10,<6
 nbclient>=0.10,<1
 ipykernel>=6.29,<7
-python-docx>=1.1,<2

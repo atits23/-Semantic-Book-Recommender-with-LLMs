@@ -2,7 +2,7 @@
 
 Verified on 11 November 2026 with Python 3.12.14 on Windows. This report describes the complete local catalog, not the initial 200-book smoke test.
 
-## Delivered catalog
+## Catalog
 
 - Raw dataset: **6,810** rows.
 - Cleaned, classified, emotion-scored, and indexed: **5,729** books.
@@ -24,7 +24,6 @@ The models used are MiniLM for embeddings, DeBERTa base zero-shot v2.0 for categ
 - Empty-query validation displayed the expected error.
 - Selecting Fiction returned Fiction cards.
 - Desktop and 390-pixel mobile layouts were checked; no mobile horizontal overflow and no browser JavaScript errors were observed.
-- The handbook was rendered through Microsoft Word to a **14-page PDF**, and all pages were visually inspected. The editable Word file is included.
 
 ## Retrieval sanity check
 

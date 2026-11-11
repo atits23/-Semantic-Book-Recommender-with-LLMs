@@ -15,3 +15,8 @@ artifacts/index.json
 artifacts/*.log
 docs/rendered/
 *.egg-info/
+
+# Local-only documentation
+/docs/project_guide.md
+/docs/Project_Guide*
+/scripts/create_handbook.py

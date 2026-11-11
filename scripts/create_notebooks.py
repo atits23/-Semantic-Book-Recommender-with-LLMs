@@ -154,7 +154,7 @@ def main():
             ),
             (
                 "md",
-                "## Reflection\nCompare a cheerful blurb for a tragic story with a neutral factual description. Why might classifier probabilities disagree with a reader? Explain domain shift and marketing language in your interview.",
+                "## Reflection\nCompare a cheerful blurb for a tragic story with a neutral factual description. Why might classifier probabilities disagree with a reader? Consider the effects of domain shift and marketing language.",
             ),
         ],
     )
