@@ -1,0 +1,22 @@
+{
+  "input_rows": 6810,
+  "missing_values": {
+    "isbn13": 0,
+    "isbn10": 0,
+    "title": 0,
+    "subtitle": 4429,
+    "authors": 72,
+    "categories": 99,
+    "thumbnail": 329,
+    "description": 262,
+    "published_year": 6,
+    "average_rating": 43,
+    "num_pages": 43,
+    "ratings_count": 43
+  },
+  "minimum_description_words": 20,
+  "invalid_identifier_or_title": 0,
+  "short_or_missing_description": 1081,
+  "duplicate_isbns": 0,
+  "output_rows": 5729
+}

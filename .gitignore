@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.cache/
+.env
+data/raw/*.csv
+data/raw/*.zip
+data/processed/*.csv
+data/processed/*.json
+artifacts/chroma/
+artifacts/checkpoints/
+artifacts/index.json
+artifacts/*.log
+docs/rendered/
+*.egg-info/

@@ -1,0 +1,12 @@
+{
+  "stage": "all",
+  "classification_limit": null,
+  "batch_size": 16,
+  "seconds": {
+    "clean": 2.39,
+    "classify": 0.48,
+    "emotions": 0.54,
+    "index": 229.95
+  },
+  "note": "Wall time for this invocation; cached predictions may be reused. Not a cold-start benchmark."
+}

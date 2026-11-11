@@ -1,0 +1,8 @@
+{
+  "catalog_size": 5729,
+  "sanity_queries": 20,
+  "description_self_retrieval_hit_at_1": 1.0,
+  "median_search_seconds": 0.09406050000688992,
+  "p95_search_seconds": 0.33218233998632063,
+  "interpretation": "Self-retrieval checks indexing, not recommendation quality. Timing excludes model initialization."
+}
